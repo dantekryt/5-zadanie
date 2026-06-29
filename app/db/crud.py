@@ -56,3 +56,17 @@ def delete_book(db: Session, book_id: int):
         db.delete(book)
         db.commit()
     return book
+
+# ---------- Дополнительные функции для API ----------
+def get_category_by_id(db: Session, category_id: int):
+    return db.query(models.Category).filter(models.Category.id == category_id).first()
+
+def get_book_by_id(db: Session, book_id: int):
+    return db.query(models.Book).filter(models.Book.id == book_id).first()
+
+# ---------- Дополнительные функции для API ----------
+def get_category_by_id(db: Session, category_id: int):
+    return db.query(models.Category).filter(models.Category.id == category_id).first()
+
+def get_book_by_id(db: Session, book_id: int):
+    return db.query(models.Book).filter(models.Book.id == book_id).first()
